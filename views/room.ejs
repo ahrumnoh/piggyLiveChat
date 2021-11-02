@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+  <title>Chat App</title>
+ 
+  <script>
+    const roomName = "<%= roomName %>"
+  </script>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+
+  html {
+    color: blanchedalmond;
+    background-image: url("../images/earth.png");
+      
+  }
+
+
+  body {
+    padding: 0;
+    margin: 0;
+    height: 225px;
+    background-color: rgba(2, 24, 49, 0.404);
+    display: flex;
+    justify-content: center;
+    background-color: rgba(34, 2, 23, 0.61);
+  }
+
+  #message-container {
+    
+    max-width: 800px;
+  }
+
+  #message-container div:nth-child(2n) {
+    background-color: rgb(190, 30, 30);
+  }
+
+  #send-container {
+    position: fixed;
+    padding-bottom: 30px;
+    bottom: 0;
+    background-color:black;
+    max-width: 1200px;
+    width: 80%;
+    display: flex;
+    background-color: transparent;
+  }
+
+
+  input#message-input {
+      width: 300px;
+      background-color: rgba(236, 233, 228, 0.253);
+      border-radius: 10px 10px 10px;
+      color:white;
+
+  }
+
+  a{
+    color:rgb(227, 231, 226);    
+    text-decoration: none;
+    
+  }
+
+  button {
+    background-color: rgba(13, 215, 241, 0.411);
+    border-radius: 50px 50px 50px;
+    height: 50px;
+    width: 150px;
+    justify-content: space-evenly;
+  }
+
+
+  button#send-button {
+      background-color: rgb(15, 71, 1);
+      color:white;
+      height: 50px;
+      width: 100px;
+      border-radius: 50px 50px 50px;
+      box-shadow: yellow;
+      margin-left: 1.5%;
+  }
+
+  button#out-button {
+      background-color: rgb(248, 34, 6);
+      color:white;
+      height: 50px;
+      width: 100px;
+      border-radius: 50px 50px 50px;
+      box-shadow: yellow;
+      margin-left: 1.5%;
+  }
+
+  span {
+    color: crimson;
+  }
+
+  h1.head{
+    color:yellow;
+    font-size: 30px;
+  }
+
+  button.out {
+    background-color: red;
+    height: 50px;
+    width: 150px;
+  }
+
+
+    
+</style>
+</head>
+<body>
+
+  <div class="head" id="head">
+    
+		<nav>
+			<h1 class="head">🐽 G.Piggy<span> 24/7 Live </span>Chat</h2>
+			<ul>
+				<button><a href="#NEWS" id="NEWS">📢 NEWS</a></button>
+				<button><a href="https://goldenpiggy.herokuapp.com/">🤝 BLOG</a></button>
+				<button><a href="https://ahrumnoh.github.io/react-api-crypto-tracker-v1/">💎 Crypto SEARCH</a></button>	
+        <button class="out"><a href="/">Chat Out 💨</a></button>
+
+        
+			</ul>
+
+  <div class="card">
+  <div id="message-container"></div>
+  <form id="send-container">
+    <input type="text" id="message-input">
+    <button type="submit" id="send-button">Send</button> 
+       
+  </form>
+
+
+
+  
+
+  </div>
+</body>
+</html>

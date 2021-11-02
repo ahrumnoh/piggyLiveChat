@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Chat App</title>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+
+  <style>
+  html {
+    color: blanchedalmond;
+    background-image: url("../images/earth.png");
+    display: flex;
+    justify-content: center;         
+  }
+
+  span {
+    color:rgb(255, 0, 13);
+    font-size: 23px;
+    background-color: rgba(12, 17, 22, 0.774);
+  }
+
+  div {
+    font-size: 20px;
+    color:rgb(255, 175, 2);
+  }
+
+  a {
+    color:rgb(246, 247, 242);
+    text-decoration: none;
+    font-size: 20px;
+    
+  }
+  button#join {
+    background-color: rgb(29, 24, 29);
+  }
+
+  button#create{
+    background-color: rgba(112, 128, 144, 0.644);
+    font-size: 20px;
+  }
+
+  button {
+    background-color: rgba(46, 139, 86, 0.651);
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 50px;
+    font:13px;
+    color:white;
+    height: 35px;
+    width: 150px;
+  }
+
+  a#NEWS{
+    font-size: 15px;
+  }
+  a#Blog {
+    font-size: 15px;
+  }
+  a#search {
+    font-size: 15px;
+  }
+
+  input {
+    height: 35px;
+    width: 400px;
+    border-radius: 50px;
+    background-color:rgba(245, 222, 179, 0.466);
+  }
+
+  
+
+  </style>
+</head>
+<body>
+
+  <div class="head" id="head">
+    
+		<nav>
+			<h1 class="head">🐽 G.Piggy<span> 24/7 Live  </span>Chat</h2>
+			<ul>
+				<button><a href="#NEWS" id="NEWS">📢 NEWS</a></button>
+				<button><a href="https://goldenpiggy.herokuapp.com/" id="Blog">🤝 BLOG</a></button>
+				<button><a href="https://ahrumnoh.github.io/react-api-crypto-tracker-v1/" id="search">💎 Crypto SEARCH</a></button>	
+                
+			</ul>
+
+  <div id="room-container">
+    <% Object.keys(rooms).forEach(room => { %>
+      <div ><span>🌏 ROOM:</span> <%= room %></div>
+      <br>
+      <button id="join"><a href="/<%= room %>">Join</a></button>
+    <% }) %>
+  </div>
+
+  <br>
+  <br>
+
+  <form action="/room" method="POST">
+    <input name="room" type="text" required>
+    <button type="submit" id="create">👍 Create </button>
+  </form>
+
+</body>
+</html>
