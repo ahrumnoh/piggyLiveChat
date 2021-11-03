@@ -1,21 +1,25 @@
 {
   "name": "current-project",
+  "homepage": "https://ahrumnoh.github.io/piggyLiveChat",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
     "ejs": "^2.7.4",
     "express": "^4.17.1",
-    "gh-pages": "^3.2.3",
-    "mysql": "^2.18.1",
+   "mysql": "^2.18.1",
     "nodeman": "^1.1.2",
     "nodemon": "^1.19.4",
     "socket.io": "^2.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ahrumnoh/piggyLiveChat/issues"
-  },
-  "homepage": "https://github.com/ahrumnoh/piggyLiveChat#readme"
+  }
+ 
 }
