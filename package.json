@@ -5,9 +5,10 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "deploy": "^1.0.3",
     "ejs": "^2.7.4",
     "express": "^4.17.1",
-   "mysql": "^2.18.1",
+    "mysql": "^2.18.1",
     "nodeman": "^1.1.2",
     "nodemon": "^1.19.4",
     "socket.io": "^2.4.1"
@@ -31,5 +32,4 @@
   "bugs": {
     "url": "https://github.com/ahrumnoh/piggyLiveChat/issues"
   }
- 
 }
