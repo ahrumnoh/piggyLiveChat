@@ -1,7 +1,10 @@
-const express = require('express')
-const app = express()
-const server = require('http').Server(app)
-const io = require('socket.io')(server)
+const express = require('express');
+const app = express();
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
+
+
+
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
@@ -58,3 +61,6 @@ function getUserRooms(socket) {
     return names
   }, [])
 }
+
+
+
