@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 
 const rooms = { }
 
-app.get('/', (req, res) => {
+app.get('/', (res) => {
   res.render('index', { rooms: rooms })
 })
 
