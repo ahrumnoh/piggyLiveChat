@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
+var PORT = process.env.PORT || 3000;
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
@@ -33,7 +34,9 @@ app.get('/:room', (req, res) => {
   res.render('room', { roomName: req.params.room })
 })
 
-server.listen(3000)
+server.listen(PORT, function () {
+  console.log("server is running");
+});
 
 io.on('connection', socket => {
   socket.on('new-user', (room, name) => {
